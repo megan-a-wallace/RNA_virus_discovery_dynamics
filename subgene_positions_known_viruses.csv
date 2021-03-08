@@ -1,0 +1,31 @@
+virus,molecule,group,family,gene,subgene,prot_cat,start,end,from ,to,strand,direction
+Dtri_sigma_virus,Dtri_sigma_virus,neg_ssRNA,rhabdoviridae,genome,nucleoprotein,nucleoprotein,1,13598,1,1479,reverse,-1
+Dtri_sigma_virus,Dtri_sigma_virus,neg_ssRNA,rhabdoviridae,genome,polymerase_associated_protein,polymerase_associated_protein,1,13598,1564,2424,reverse,-1
+Dtri_sigma_virus,Dtri_sigma_virus,neg_ssRNA,rhabdoviridae,genome,prot_3,other_protein,1,13598,2465,3487,reverse,-1
+Dtri_sigma_virus,Dtri_sigma_virus,neg_ssRNA,rhabdoviridae,genome,matrix_protein,structural_protein,1,13598,3524,4207,reverse,-1
+Dtri_sigma_virus,Dtri_sigma_virus,neg_ssRNA,rhabdoviridae,genome,glycoprotein,glycoprotein,1,13598,4578,6470,reverse,-1
+Dtri_sigma_virus,Dtri_sigma_virus,neg_ssRNA,rhabdoviridae,genome,RdRp,replicase,1,13598,6875,13291,reverse,-1
+Kinkell_virus,Kinkell_virus,pos_ssRNA,iflaviridae,genome,prot_1,other_protein,1,10271,639,776,forward,1
+Kinkell_virus,Kinkell_virus,pos_ssRNA,iflaviridae,genome,polyprotein ,polyprotein,1,10271,954,9884,forward,1
+Kinkell_virus,Kinkell_virus,pos_ssRNA,iflaviridae,genome,prot_3,other_protein,1,10271,9933,10100,forward,1
+Larkfield_virus,Larkfield_virus,dsRNA,totiviridae,genome,capsid_prot,capsid_protein,1,6019,115,3189,forward,1
+Larkfield_virus,Larkfield_virus,dsRNA,totiviridae,genome,prot_2,other_protein,1,6019,3317,3478,forward,1
+Larkfield_virus,Larkfield_virus,dsRNA,totiviridae,genome,RdRp,replicase,1,6019,3477,5522,forward,1
+Lye_green_virus,Lye_green_virus,neg_ssRNA,rhabdoviridae,genome,prot_1,other_protein,1,14180,48,1499,reverse,-1
+Lye_green_virus,Lye_green_virus,neg_ssRNA,rhabdoviridae,genome,prot_2,other_protein,1,14180,1627,2982,reverse,-1
+Lye_green_virus,Lye_green_virus,neg_ssRNA,rhabdoviridae,genome,prot_3,other_protein,1,14180,3033,3821,reverse,-1
+Lye_green_virus,Lye_green_virus,neg_ssRNA,rhabdoviridae,genome,glycoprotein,glycoprotein,1,14180,3915,5834,reverse,-1
+Lye_green_virus,Lye_green_virus,neg_ssRNA,rhabdoviridae,genome,prot_5,other_protein,1,14180,5997,6302,reverse,-1
+Lye_green_virus,Lye_green_virus,neg_ssRNA,rhabdoviridae,genome,RdRp,replicase,1,14180,6795,13769,reverse,-1
+Lye_green_virus,Lye_green_virus,neg_ssRNA,rhabdoviridae,genome,prot_7,other_protein,1,14180,13910,14083,reverse,-1
+Tartou_virus,Tartou_virus,pos_ssRNA,tombusviridae,genome,prot_1,other_protein,1,2686,968,2365,forward,1
+Prestney_burn_virus,Prestney_burn_virus,pos_ssRNA,sobemoviridae,genome,prot_1,other_protein,1,3029,30,1766,forward,1
+Prestney_burn_virus,Prestney_burn_virus,pos_ssRNA,sobemoviridae,genome,RdRp,replicase,1,3029,1823,2866,forward,1
+Hermitage_virus,Hermitage_virus,dsRNA,flaviviridae,genome,partial_polyprotein,polyprotein,1,13206,711,13206,forward,1
+Withyham_virus,Withyham_virus,neg_ssRNA,rhabdoviridae,genome,nucleoprotein,nucleoprotein,1,15684,273,1745,reverse,-1
+Withyham_virus,Withyham_virus,neg_ssRNA,rhabdoviridae,genome,prot_2,other_protein,1,15684,1952,3151,reverse,-1
+Withyham_virus,Withyham_virus,neg_ssRNA,rhabdoviridae,genome,prot_3,other_protein,1,15684,3446,4348,reverse,-1
+Withyham_virus,Withyham_virus,neg_ssRNA,rhabdoviridae,genome,prot_4,other_protein,1,15684,4777,5091,reverse,-1
+Withyham_virus,Withyham_virus,neg_ssRNA,rhabdoviridae,genome,glycoprotein,glycoprotein,1,15684,5429,7513,reverse,-1
+Withyham_virus,Withyham_virus,neg_ssRNA,rhabdoviridae,genome,prot_6,other_protein,1,15684,7930,8244,reverse,-1
+Withyham_virus,Withyham_virus,neg_ssRNA,rhabdoviridae,genome,RdRp,replicase,1,15684,8734,15501,reverse,-1

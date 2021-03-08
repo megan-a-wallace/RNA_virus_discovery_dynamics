@@ -1,0 +1,31 @@
+virus,molecule,group,family,gene,start,end,strand,direction
+Vogrie_virus,Vogrie_virus_1,dsRNA,reoviridae,Seg 1,1,4195,forward,1
+Vogrie_virus,Vogrie_virus_2,dsRNA,reoviridae,Seg 2,1,3991,forward,1
+Vogrie_virus,Vogrie_virus_5,dsRNA,reoviridae,Seg 5,1,2454,forward,1
+Cockenzie_virus,Cockenzie_virus,neg_ssRNA,dicistroviridae,RC_proteins,1,9251,forward,1
+Crammond_virus,Crammond_virus,pos_ssRNA,virgaviridae,RC_proteins,1,10986,forward,1
+River_almond_virus,River_almond_virus,pos_ssRNA,negevirus,R3_proteins,1,9604,forward,1
+Hillwood_park_virus,Hillwood_park_virus,pos_ssRNA,negevirus,R3_proteins,1,9239,forward,1
+Craighall_virus,Craighall_virus,dsRNA,totiviridae,GP_genes,1,5909,forward,1
+Inverleith_virus,Inverleith_virus,dsRNA,totiviridae,GP_genes,1,6683,forward,1
+Midmar_virus,Midmar_virus_1,pos_ssRNA,tombusviridae,Seg1,1,3685,forward,1
+Midmar_virus,Midmar_virus_2,pos_ssRNA,tombusviridae,Seg2,1,2065,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_1,dsRNA,reoviridae,Seg1,1,3755,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_2,dsRNA,reoviridae,Seg2,1,2750,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_3,dsRNA,reoviridae,Seg3,1,2883,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_4,dsRNA,reoviridae,Seg4,1,1112,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_5,dsRNA,reoviridae,Seg5,1,1143,forward,1
+Gosford_virus,Gosford_virus,pos_ssRNA,narnaviridae,RdRp,1,3244,forward,1
+Inveresk_virus,Inveresk_virus_L,neg_ssRNA,nyamiviridae,L gene ,1,6578,reverse,-1
+Sunshine_virus,Sunshine_virus_L,neg_ssRNA,phenuiviridae,L gene ,1,4751,reverse,-1
+Sighthill_virus,Sighthill_virus_L,neg_ssRNA,phenuiviridae,L seg,1,6942,reverse,-1
+Sighthill_virus,Sighthill_virus_M,neg_ssRNA,phenuiviridae,M seg ,1,3327,reverse,-1
+Tranent_virus,Tranent_virus_L,neg_ssRNA,phenuiviridae,L seg,1,6827,reverse,-1
+Tranent_virus,Tranent_virus_M,neg_ssRNA,phenuiviridae,M seg ,1,4018,reverse,-1
+Tranent_virus,Tranent_virus_S,neg_ssRNA,phenuiviridae,S seg,1,1784,reverse,-1
+Lasswade_virus,Lasswade_virus_L,neg_ssRNA,rhabdoviridae,L gene ,1,5100,reverse,-1
+Burdiehouse_burn_virus,Burdiehouse_burn_virus,neg_ssRNA,chuviridae,NG genes,1,4809,reverse,-1
+Dalkeith_virus,Dalkeith_virus_L,neg_ssRNA,chuviridae,L gene ,1,8304,reverse,-1
+North_esk_virus,North_esk_virus_L,neg_ssRNA,phasmaviridae,L seg,1,6586,reverse,-1
+North_esk_virus,North_esk_virus_M,neg_ssRNA,phasmaviridae,M seg ,1,2495,reverse,-1
+North_esk_virus,North_esk_virus_S,neg_ssRNA,phasmaviridae,S seg,1,2225,reverse,-1

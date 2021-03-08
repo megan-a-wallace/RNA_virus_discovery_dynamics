@@ -1,0 +1,9 @@
+virus,molecule,group,family,gene,start,end,strand,direction
+Dtri_sigma_virus,Dtri_sigma_virus,neg_ssRNA,rhabdoviridae,genome,1,13598,reverse,-1
+Kinkell_virus,Kinkell_virus,pos_ssRNA,iflaviridae,genome,1,10271,forward,1
+Larkfield_virus,Larkfield_virus,dsRNA,totiviridae,genome,1,6019,forward,1
+Lye_green_virus,Lye_green_virus,neg_ssRNA,rhabdoviridae,genome,1,14180,reverse,-1
+Tartou_virus,Tartou_virus,pos_ssRNA,tombusviridae,genome,1,2686,forward,1
+Prestney_burn_virus,Prestney_burn_virus,pos_ssRNA,sobemoviridae,genome,1,3029,forward,1
+Hermitage_virus,Hermitage_virus,dsRNA,flaviviridae,genome,1,13206,forward,1
+Withyham_virus,Withyham_virus,neg_ssRNA,rhabdoviridae,genome,1,15684,reverse,-1

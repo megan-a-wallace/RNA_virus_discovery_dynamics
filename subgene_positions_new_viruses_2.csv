@@ -1,0 +1,49 @@
+virus,molecule,group,family,gene,subgene,prot_cat,start,end,from,to,strand,direction
+Vogrie_virus,Vogrie_virus_1,dsRNA,reoviridae,Seg1,RdRp,replicase,1,4195,24,4157,forward,1
+Vogrie_virus,Vogrie_virus_2,dsRNA,reoviridae,Seg2,RNA_binding_prot,capsid_protein,1,3991,32,3862,forward,1
+Vogrie_virus,Vogrie_virus_5,dsRNA,reoviridae,Seg5,minor_core_structural_prot,structural_protein,1,2454,545,2413,forward,1
+Cockenzie_virus,Cockenzie_virus,pos_ssRNA,dicistroviridae,RC_proteins,replicase_prot,replicase,1,9251,761,6061,forward,1
+Cockenzie_virus,Cockenzie_virus,pos_ssRNA,dicistroviridae,RC_proteins,capsid_prot,capsid_protein,1,9251,6406,8967,forward,1
+Crammond_virus,Crammond_virus,pos_ssRNA,virgaviridae,RC_proteins,RdRp,replicase,1,10986,61,8871,forward,1
+Crammond_virus,Crammond_virus,pos_ssRNA,virgaviridae,RC_proteins,prot_2,other_protein,1,10986,8901,9095,forward,1
+Crammond_virus,Crammond_virus,pos_ssRNA,virgaviridae,RC_proteins,capsid_prot,capsid_protein,1,10986,9097,9672,forward,1
+Crammond_virus,Crammond_virus,pos_ssRNA,virgaviridae,RC_proteins,prot_4,other_protein,1,10986,9742,9987,forward,1
+Crammond_virus,Crammond_virus,pos_ssRNA,virgaviridae,RC_proteins,prot_5,other_protein,1,10986,10254,10805,forward,1
+River_almond_virus,River_almond_virus,pos_ssRNA,negevirus,R3_proteins,RdRp,replicase,1,9604,94,7626,forward,1
+River_almond_virus,River_almond_virus,pos_ssRNA,negevirus,R3_proteins,prot_2,other_protein,1,9604,7677,8852,forward,1
+River_almond_virus,River_almond_virus,pos_ssRNA,negevirus,R3_proteins,prot_3,other_protein,1,9604,8883,9521,forward,1
+Hillwood_park_virus,Hillwood_park_virus,pos_ssRNA,negevirus,R3_proteins,RdRp,replicase,1,9239,92,7180,forward,1
+Hillwood_park_virus,Hillwood_park_virus,pos_ssRNA,negevirus,R3_proteins,prot_2,other_protein,1,9239,7236,8489,forward,1
+Hillwood_park_virus,Hillwood_park_virus,pos_ssRNA,negevirus,R3_proteins,prot_3,other_protein,1,9239,8522,9163,forward,1
+Craighall_virus,Craighall_virus,dsRNA,totiviridae,GP_genes,ORF1,other_protein,1,5909,68,3238,forward,1
+Craighall_virus,Craighall_virus,dsRNA,totiviridae,GP_genes,polymerase,replicase,1,5909,3748,5909,forward,1
+Inverleith_virus,Inverleith_virus,dsRNA,totiviridae,GP_genes,ORF1,other_protein,1,6683,47,3874,forward,1
+Inverleith_virus,Inverleith_virus,dsRNA,totiviridae,GP_genes,polymerase,replicase,1,6683,3913,6594,forward,1
+Midmar_virus,Midmar_virus_1,pos_ssRNA,tombusviridae,Seg1,P1,other_protein,1,3685,71,2602,forward,1
+Midmar_virus,Midmar_virus_1,pos_ssRNA,tombusviridae,Seg1,RdRp,replicase,1,3685,1638,3611,forward,1
+Midmar_virus,Midmar_virus_2,pos_ssRNA,tombusviridae,Seg2,P3,other_protein,1,2065,66,1889,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_1,dsRNA,reoviridae,Seg1,RdRp,replicase,1,3755,3,3755,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_2,dsRNA,reoviridae,Seg2,prot_1,other_protein,1,2750,25,2742,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_3,dsRNA,reoviridae,Seg3,prot_2,other_protein,1,2883,48,2816,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_4,dsRNA,reoviridae,Seg4,prot_3,other_protein,1,1112,7,990,forward,1
+Glencorse_burn_virus,Glencorse_burn_virus_5,dsRNA,reoviridae,Seg5,prot_4,other_protein,1,1143,15,1082,forward,1
+Gosford_virus,Gosford_virus,pos_ssRNA,narnaviridae,RdRp,RdRp,replicase,1,3244,147,3188,forward,1
+Inveresk_virus,Inveresk_virus_L,neg_ssRNA,nyamiviridae,L gene ,RdRp,replicase,1,6578,116,6433,reverse,-1
+Sunshine_virus,Sunshine_virus_L,neg_ssRNA,phenuiviridae,L gene ,RdRp,replicase,1,4751,32,4612,reverse,-1
+Sighthill_virus,Sighthill_virus_L,neg_ssRNA,phenuiviridae,L seg,RdRp,replicase,1,6942,81,6776,reverse,-1
+Sighthill_virus,Sighthill_virus_M,neg_ssRNA,phenuiviridae,M seg ,G1,glycoprotein,1,3327,82,1857,reverse,-1
+Sighthill_virus,Sighthill_virus_M,neg_ssRNA,phenuiviridae,M seg ,G2,glycoprotein,1,3327,1922,3109,reverse,-1
+Tranent_virus,Tranent_virus_L,neg_ssRNA,phenuiviridae,L seg,RdRp,replicase,1,6827,75,6734,reverse,-1
+Tranent_virus,Tranent_virus_M,neg_ssRNA,phenuiviridae,M seg ,glycoprotein,glycoprotein,1,4018,53,3862,reverse,-1
+Tranent_virus,Tranent_virus_S,neg_ssRNA,phenuiviridae,S seg,nucleoprotein,nucleoprotein,1,1784,58,1623,reverse,-1
+Lasswade_virus,Lasswade_virus_L,neg_ssRNA,rhabdoviridae,L gene ,RdRp,replicase,1,5100,270,4946,reverse,-1
+Burdiehouse_burn_virus,Burdiehouse_burn_virus,neg_ssRNA,chuviridae,NG genes,nucleoprotein,nucleoprotein,1,4809,112,1188,reverse,-1
+Burdiehouse_burn_virus,Burdiehouse_burn_virus,neg_ssRNA,chuviridae,NG genes,prot_2,other_protein,1,4809,1438,2211,reverse,-1
+Burdiehouse_burn_virus,Burdiehouse_burn_virus,neg_ssRNA,chuviridae,NG genes,glycoprotein,glycoprotein,1,4809,2767,4731,reverse,-1
+Dalkeith_virus,Dalkeith_virus_L,neg_ssRNA,chuviridae,L gene ,RdRp,replicase,1,8304,508,7809,reverse,-1
+Dalkeith_virus,Dalkeith_virus_L,neg_ssRNA,chuviridae,L gene ,prot_2,other_protein,1,8304,7814,8005,reverse,-1
+North_esk_virus,North_esk_virus_L,neg_ssRNA,phasmaviridae,L seg,RdRp,replicase,1,6586,52,6486,reverse,-1
+North_esk_virus,North_esk_virus_M,neg_ssRNA,phasmaviridae,M seg ,glycoprotein,glycoprotein,1,2495,77,2308,reverse,-1
+North_esk_virus,North_esk_virus_S,neg_ssRNA,phasmaviridae,S seg,prot_3,other_protein,1,2225,36,422,reverse,-1
+North_esk_virus,North_esk_virus_S,neg_ssRNA,phasmaviridae,S seg,nucleoprotein,nucleoprotein,1,2225,370,1389,reverse,-1
+North_esk_virus,North_esk_virus_S,neg_ssRNA,phasmaviridae,S seg,prot_5,other_protein,1,2225,1533,1928,reverse,-1
