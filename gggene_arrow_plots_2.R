@@ -13,8 +13,6 @@ library(tidyr)
 library(scales)
 library(ggplot2)
 
-setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/Sequencing/05_19_totalRNASeq/genome_presentation")
-
 ###Combining the negative and positive sense viruses into a single plot so they are all on the same axis 
 pns_genomes_newviruses <- read.csv("gene_positions_new_viruses_2.csv", header = TRUE)
 pns_subgenes_newviruses <- read.csv("subgene_positions_new_viruses_2.csv", header = TRUE)
