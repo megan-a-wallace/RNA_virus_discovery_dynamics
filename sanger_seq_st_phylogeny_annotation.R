@@ -5,7 +5,6 @@
 ##Megan A. Wallace
 ##March 2021
 
-setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/Sequencing/Sanger_seq/Spat_temp")
 
 ##installing the latest Bioconductor version
 if (!requireNamespace("BiocManager", quietly = TRUE))
