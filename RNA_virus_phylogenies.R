@@ -2,8 +2,6 @@
 ## New RNA virus trees ##
 #########################
 
-#setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/thesis/ch2_metagenomic_virus_discovery")
-setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/Sequencing/05_19_totalRNASeq/TotalRNAseqdata_Edinburghgenomics_09_19/phylogenies")
 ##Using ggtree to make nicer looking phylogenies of new RNA viruses. 
 
 ##installing the latest Bioconductor version
