@@ -11,9 +11,6 @@ library(pheatmap)
 library(dplyr)
 library(grid)
 
-##setting working directory
-setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/Sequencing/05_19_totalRNASeq/TotalRNAseqdata_Edinburghgenomics_09_19/")
-
 ##importing data
 read.csv(file = "relative_virus_mapped_reads.csv", 
          header = TRUE, row.names = "virus", stringsAsFactors = FALSE, strip.white = TRUE)->reads_mapped_dat
