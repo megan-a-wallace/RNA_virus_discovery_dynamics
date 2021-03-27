@@ -147,7 +147,6 @@ cbPalette_long <- c("#000000","#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E4
 # Importing data ----------------------------------------------------------
 
 #now updated w species from CO1 barcodes (apart from single mystery one...which I've put as virilis as its probs in the group but not sure what sp)
-setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/Data/Fly Collections/Spatial_temporal.prev/data_processing_Aug17_Oct18/virus_presence_absence_PCRs")
 indiv_PCR_virus_data<-read.table("Indiv_virus_PCR_results.csv",header = TRUE, sep = ",")
 
 indiv_PCR_virus_data$short_code<-as.character(indiv_PCR_virus_data$short_code)
