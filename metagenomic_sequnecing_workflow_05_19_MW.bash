@@ -1,46 +1,11 @@
 ####De novo Assembly of virus genomes - Sequencing from Edinburgh (Sep 16-Oct 18) - Collections by Megan Wallace#############
 #############################################################################################################################
 
-#on putty
-#SSH = s1667991@basden.bio.ed.ac.uk
-#pw....
-
-#to open tmux window
-tmux
-
-#or to reopen tmux window which is already running
-tmux attach 
-
-#to logout of tmux window - return to main screen
-tmux detatch
-
-####################################################################################
-#	Using Trinity with cd-Hit to thin the results
-# cd-hit -c 0.85 was chosen becasue this is about the DNA divergence that people often define 'different' viruses - originally from Dengue type delimination @ this divergence
-#
-#Trials of different assemblers by Tymek - Summer 2019
-#	> sort(table(gsub("RZ_|DSN_|UK_|NonUK_","",scan("clipboard",what="character"))))
-# Read 436 items
-    # default_ABySS    over100bp_SOAP   default_Trinity default_rnaSPAdes    hard_rnaSPAdes    soft_rnaSPAdes    Salmon_Trinity    cd-hit_Trinity 
-               # 13                30                44                62                62                62                74                89 
-###################################################################################
-
-#############################################################################
+##########################
 ### 
 ### Trinity - Assembly
 ###
-#############################################################################
-
-##Previously created link between raw reads file and 0_reads for Dec16June17 sequences
-
-##Create link between raw files and 0_reads folder, 1-left, 2-right hand reads
-#/localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/raw/
-		#ln -s /localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/raw/171024_K00300_0057_BHM2W3BBXX_1_TP-D7-005_TP-D5-007_1.fastq.gz MW_Dros_1617.A.1.fastq.gz ; \ 
-		#ln -s /localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/raw/171024_K00300_0057_BHM2W3BBXX_1_TP-D7-005_TP-D5-007_2.fastq.gz MW_Dros_1617.A.2.fastq.gz ; \ 
-		#ln -s /localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/raw/171024_K00300_0057_BHM2W3BBXX_2_TP-D7-005_TP-D5-007_1.fastq.gz MW_Dros_1617.B.1.fastq.gz ; \ 
-		#ln -s /localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/raw/171024_K00300_0057_BHM2W3BBXX_2_TP-D7-005_TP-D5-007_2.fastq.gz MW_Dros_1617.B.2.fastq.gz ; \ 
-		#ln -s /localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/raw/171024_K00300_0057_BHM2W3BBXX_3_TP-D7-005_TP-D5-007_1.fastq.gz MW_Dros_1617.C.1.fastq.gz ; \ 
-		#ln -s /localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/raw/171024_K00300_0057_BHM2W3BBXX_3_TP-D7-005_TP-D5-007_2.fastq.gz MW_Dros_1617.C.2.fastq.gz 
+##########################
 
 #Creating link between raw read data and 0_reads files for the three new datasets (2017 & 2018 data)
 
@@ -87,14 +52,9 @@ mv test_DrosMS_JulOct17.2.fastq.gz 0_reads/
 
 #Running the test file through Trinity to assess any errors in script
 cd /localdisk/home/s1667991/MeganMetaGenomics
-
 Trinity --trimmomatic --seqType fq --max_memory 20G --left DrosMS_JulOct17/0_reads/test_DrosMS_JulOct17.1.fastq.gz --right DrosMS_JulOct17/0_reads/test_DrosMS_JulOct17.2.fastq.gz --CPU 20 --output DrosMS_JulOct17/1_trinity/test_DrosMS_JulOct17_Trinity_10_1
-
 ##Works fine apart from final assembly of clusters of reads...because there's not enough reads
 
-##Now working switched from working in the home drive to the /mnt/drive1-6tb/Megan/ folder, where I have copied all of the files, removing any files other than raw data for the three new datasets in the home directory, as there's more space on the drive - symbolic links will still go to the home drive for the raw fastq.gz files I think?? (I used cp -rp, may preserve links, maybe should have used -a instead of -rp) - Check this if there's an error!
-
-#
 cd /mnt/drive1-6tb/Megan/	
 		#DrosMS_JulOct17
 		Trinity --trimmomatic --seqType fq --max_memory 20G --left DrosMS_JulOct17/0_reads/DrosMS_JulOct17.1.fastq.gz --right DrosMS_JulOct17/0_reads/DrosMS_JulOct17.2.fastq.gz --CPU 20 --output DrosMS_JulOct17/1_trinity/DrosMS_JulOct17_Trinity_10_19
@@ -108,12 +68,12 @@ cd /mnt/drive1-6tb/Megan/
 		Trinity --trimmomatic --seqType fq --max_memory 20G --left Dec2016June2017/10_19_reanalyses/0_reads/Dec2016June2017.A.1.fastq.gz,Dec2016June2017/10_19_reanalyses/0_reads/Dec2016June2017.B.1.fastq.gz,Dec2016June2017/10_19_reanalyses/0_reads/Dec2016June2017.C.1.fastq.gz --right Dec2016June2017/10_19_reanalyses/0_reads/Dec2016June2017.A.2.fastq.gz,Dec2016June2017/10_19_reanalyses/0_reads/Dec2016June2017.B.2.fastq.gz,Dec2016June2017/10_19_reanalyses/0_reads/Dec2016June2017.C.2.fastq.gz --CPU 20 --output Dec2016June2017/10_19_reanalyses/1_trinity/Dec2016June2017_Trinity_10_19
 		
 #############################################################################
-### 																	#####
-### 						Filtering with CD-HIT						#####	
-###																		#####
+### 								
+### 						Filtering with CD-HIT						
+###																		
 #############################################################################
 
-http://www.bioinformatics.org/cd-hit/cd-hit-user-guide.pdf
+#http://www.bioinformatics.org/cd-hit/cd-hit-user-guide.pdf
 
 # Options
 # -o output filename, required.
@@ -126,10 +86,7 @@ http://www.bioinformatics.org/cd-hit/cd-hit-user-guide.pdf
 ##Example from tymeks code
 	#cd-hit-est -o cdhit -c 0.85 -i Trinity.fasta -p 1 -d 0 -b 3 -T 10 
 ##Example from the cd-hit user guide 
-	#cd-hit-est -i est_human -o est_human95 -c 0.95 -n 8 ----> why are the input and output swapped? or does this not matter? 
-
-
-##Created 2_cd_hit directories in the files for the filtered contigs - using mkdir in the DrosMS_ (3 newer datasets) or 10_19_reanalyses files (SeptOct2016 + Dec2016June2017)
+	#cd-hit-est -i est_human -o est_human95 -c 0.95 -n 8 
 
 cd /mnt/drive1-6tb/Megan
 	cd-hit-est -o DrosMS_JulOct17/2_cd_hit/DrosMS_JulOct17_cd_hit -c 0.85 -i DrosMS_JulOct17/1_trinity/DrosMS_JulOct17_Trinity_10_19/Trinity.fasta -p 1 -d 10 -b 3 -T 10 
@@ -148,7 +105,6 @@ cd /mnt/drive1-6tb/Megan
 #-b 3 = band_width of alignment, default = 20 - kept on 3 but maybe could increase? 
 #-T 10 = kept to 10, to use 10 CPUs
 
-
 ######################################################
 ######################################################
 ######################################################
@@ -158,17 +114,6 @@ cd /mnt/drive1-6tb/Megan
 ######################################################
 ######################################################
 ######################################################
-
-#Example from Nathan's code
-
-#for the older files 
-##########################################
-#Copy the output files and re-format them. Format into unwrapped fasta; remone sequence header after path; swap spaces for _'s; swap TRINITY for DsuzNathan2016
-#cat /localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/1_trinity/Megan_Mix2_Trinity/Trinity.fasta | fasta_formatter | sed 's/ path.\+//g' | sed s'/ /_/g' | sed 's/TRINITY/MeganMix2/g' > localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/2_fasta/MeganMix2.fas
-#process the output to creat concatenated putatative protein sequences for blasting
-#Rscript /localdisk/science/ProcessSPADES.Rscript /localdisk/home/s1667991/MeganMetaGenomics/MeganMix2/2_fasta/MeganMix2.fas 
-
-##Created 3_fasta dirs for the formatted fasta files, and output from the SPADES Rscript
 
 #formatting into unwrapped fasta, replacing seq header with seq run name and removing spaces
 
@@ -202,40 +147,14 @@ Rscript /localdisk/science/ProcessSPADES.Rscript /mnt/drive1-6tb/Megan/Dec2016Ju
 Rscript /localdisk/science/ProcessSPADES.Rscript /mnt/drive1-6tb/Megan/SeptOct2016/10_19_reanalyses/3_fasta/SeptOct2016_cd_hit.fas
 
 ##Have moved the _PROTBLASTCHIMERA.fasta and _PROT.fasta to a 4_proteins directory, newly made for each folder, and removed from 3_fasta dir
-cd /mnt/drive1-6tb/Megan
-
-cp DrosMS_JulOct17/3_fasta/DrosMS_JulOct17_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta DrosMS_JulOct17/4_proteins/DrosMS_JulOct17_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-cp DrosMS_JulOct17/3_fasta/DrosMS_JulOct17_cd_hit.LongestORFS_PROT.fasta DrosMS_JulOct17/4_proteins/DrosMS_JulOct17_cd_hit.LongestORFS_PROT.fasta
-rm DrosMS_JulOct17/3_fasta/DrosMS_JulOct17_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-rm DrosMS_JulOct17/3_fasta/DrosMS_JulOct17_cd_hit.LongestORFS_PROT.fasta
-
-cp DrosMS_AprJun18/3_fasta/DrosMS_AprJun18_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta DrosMS_AprJun18/4_proteins/DrosMS_AprJun18_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-cp DrosMS_AprJun18/3_fasta/DrosMS_AprJun18_cd_hit.LongestORFS_PROT.fasta DrosMS_AprJun18/4_proteins/DrosMS_AprJun18_cd_hit.LongestORFS_PROT.fasta
-rm DrosMS_AprJun18/3_fasta/DrosMS_AprJun18_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-rm DrosMS_AprJun18/3_fasta/DrosMS_AprJun18_cd_hit.LongestORFS_PROT.fasta
-
-cp DrosMS_JulOct18/3_fasta/DrosMS_JulOct18_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta DrosMS_JulOct18/4_proteins/DrosMS_JulOct18_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-cp DrosMS_JulOct18/3_fasta/DrosMS_JulOct18_cd_hit.LongestORFS_PROT.fasta DrosMS_JulOct18/4_proteins/DrosMS_JulOct18_cd_hit.LongestORFS_PROT.fasta
-rm DrosMS_JulOct18/3_fasta/DrosMS_JulOct18_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-rm DrosMS_JulOct18/3_fasta/DrosMS_JulOct18_cd_hit.LongestORFS_PROT.fasta
-
-cp Dec2016June2017/10_19_reanalyses/3_fasta/Dec2016June2017_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta Dec2016June2017/10_19_reanalyses/4_proteins/Dec2016June2017_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-cp Dec2016June2017/10_19_reanalyses/3_fasta/Dec2016June2017_cd_hit.LongestORFS_PROT.fasta Dec2016June2017/10_19_reanalyses/4_proteins/Dec2016June2017_cd_hit.LongestORFS_PROT.fasta
-rm Dec2016June2017/10_19_reanalyses/3_fasta/Dec2016June2017_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-rm Dec2016June2017/10_19_reanalyses/3_fasta/Dec2016June2017_cd_hit.LongestORFS_PROT.fasta
-
-cp SeptOct2016/10_19_reanalyses/3_fasta/SeptOct2016_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta SeptOct2016/10_19_reanalyses/4_proteins/SeptOct2016_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-cp SeptOct2016/10_19_reanalyses/3_fasta/SeptOct2016_cd_hit.LongestORFS_PROT.fasta SeptOct2016/10_19_reanalyses/4_proteins/SeptOct2016_cd_hit.LongestORFS_PROT.fasta
-rm SeptOct2016/10_19_reanalyses/3_fasta/SeptOct2016_cd_hit.LongestORFS_PROTBLASTCHIMERA.fasta
-rm SeptOct2016/10_19_reanalyses/3_fasta/SeptOct2016_cd_hit.LongestORFS_PROT.fasta
 
 ######################################################
 ######################################################
 ######################################################
-#													##
-# 	Re-format post assembly and call translations	##
-#													##
-######################################################
+#													
+# 	Re-format post assembly and call translations	
+#													
+#####################################################
 ######################################################
 ######################################################
 
@@ -267,16 +186,15 @@ cd /mnt/drive1-6tb/Megan/SeptOct2016/10_19_reanalyses/3_fasta
 cat *.LongestORFS_DNA.fasta | sed 's/>>/>/g' > SeptOct2016_Long_DNAs.fas
 	
 ###################################################################
-### 															###
+### 															
 ### Building a BLAST database, searching against this database 	###
-###																###
+###																
 ###################################################################
 
-##Workflow based on script from Nathan, using diamond blastp against FlyMetagenomic_diamond database (looking for both viruses? and fly contaminants??), looking for the ACCs in the virus database nr_viruses, and then joining the virus AACs to the nucleotide sequences to create a fasta file of virus like sequences
+##Workflow based on script from Nathan, using diamond blastp against FlyMetagenomic_diamond database, looking for the ACCs in the virus database nr_viruses, and then joining the virus AACs to the nucleotide sequences to create a fasta file of virus like sequences
 ##Then creating a blast db from this file, and matching to a db of all of the known viruses to find known viruses in the metagenomic sequences
 
 cd /mnt/drive1-6tb/Megan
-
 #make a blast database to find those already known
 #re-made this with the bits I know about, but haven't sent to darren ...Lasswade + Bunya L4
 makeblastdb -in  Drosophila_Viruses_Nov2019.fas -out KnownDrosVirus -dbtype 'nucl'
@@ -440,8 +358,6 @@ cat 11_19_put_new_viruses.fas | blastn -db KnownDrosVirus -num_threads 10 -outfm
 # Picronavirus_DrosMS_JulOct18_Drosophila_Nasuta_cf_goose_dicistrovirus_81%_72.5%_cf_Emperyat_virus_76.4% DrosophilaNasuta_len=1102_cf_Empeyrat_virus_at_76.4%
 # Picronavirus_DrosMS_JulOct18_Drosophila_Nasuta_cf_goose_dicistrovirus_81%_72.5%_cf_Emperyat_virus_76.4% DrosophilaNasuta_len=2822_cf_Goose_dicistrovirus_at_72.5%
 # Picronavirus_DrosMS_JulOct18_Drosophila_Nasuta_cf_goose_dicistrovirus_81%_72.5%_cf_Emperyat_virus_76.4% DrosophilaNasuta_len=3191_cf_Goose_dicistrovirus_at_81%
-
-##Check this w DO, has this virus been described in more detail somewhere??
 
 ##now checking for the new viruses across all virus databases 
 ##made db from the newviruslikehit.fas files from all 5 of the sequencing datasets
@@ -664,7 +580,6 @@ bowtie2 -x Drosophila_Viruses_Nov2019_bowtie_db/Drosophila_Viruses_Nov2019_bowti
 ## want to 1) extract second col (names of viruses with similarity to contigs in the dataset)
 ## 2) remove replicates so only unique sequence names from the known virus contigs remain
 cd /mnt/drive1-6tb/Megan
-##permission denied to this file for some reason - changed permissions to file with chmod +x SeptOct2016_already_known.tsv
 mkdir SeptOct2016/10_19_reanalyses/6_read_mapping/SeptOct2016_already_known_viruses
 cut -f2 SeptOct2016/10_19_reanalyses/5_BLAST/SeptOct2016_already_known.tsv | sort | uniq > SeptOct2016/10_19_reanalyses/6_read_mapping/SeptOct2016_already_known_viruses/SeptOct2016_already_known_unique_viruses.tsv
 ## 3) match unique names to the sequences with the same titles in the Drosophila_viruses_2019.fas file - to create a fas file with the sequences I want to map reads to
@@ -862,7 +777,6 @@ bowtie2 -x Inveresk_Virus_reverse_complement_db/Inveresk_Virus_reverse_complemen
 samtools view -F 16 SeptOct2016/10_19_reanalyses/6_read_mapping/SeptOct2016_Inveresk_virus_RC_ForwardReadMappings.bam | cut -f 3 | sort | uniq -c > SeptOct2016/10_19_reanalyses/6_read_mapping/SeptOct2016_Inveresk_virus_RC_Forward_reads_mapped_per_virus.tsv
 samtools view -f 16 SeptOct2016/10_19_reanalyses/6_read_mapping/SeptOct2016_Inveresk_virus_RC_ForwardReadMappings.bam | cut -f 3 | sort | uniq -c > SeptOct2016/10_19_reanalyses/6_read_mapping/SeptOct2016_Inveresk_virus_RC_Reverse_reads_mapped_per_virus.tsv
 
-###confused by these results...so mapping forward reads to the virus at the same time as to Dimm....as most reads should map to the positive sense strand of D.imm - and then I can tell whether forward or reverse reads are mapping to the positive sense strand. ie. if more reverse reads of D.imm than forward, then reverse reads are positive sense.
 ##made a fas file w both orientations of the virus, and Dimm CO1 
 ##made a bowtie db 
 cd /mnt/drive1-6tb/Megan
@@ -1031,129 +945,12 @@ mkdir 02_21_read_mapping/new_and_known_viruses_bowtie_db
 bowtie2-build /mnt/drive1-6tb/Megan/02_21_read_mapping/new_and_known_viruses.fas new_and_known_viruses_bowtie_db/new_and_known_viruses_bowtie_db
 ## 5) Map raw reads to this bowtie2 database, so that I can see coverage across the genomes for all of the known viruses present
 cd /mnt/drive1-6tb/Megan
+#trialing on one of the datasets, but use the read_mapping_across_datasets.sh script to map across all datasets
 bowtie2 -x 02_21_read_mapping/new_and_known_viruses_bowtie_db/new_and_known_viruses_bowtie_db --very-sensitive -p 8 -q -1 DrosMS_JulOct18/0_reads/DrosMS_JulOct18.1.fastq.gz -2 DrosMS_JulOct18/0_reads/DrosMS_JulOct18.2.fastq.gz | samtools view -u -F 4 - | samtools sort -@ 6 -m 6G - > 02_21_read_mapping/DrosMS_JulOct18_new_and_known_virus_read_mapping.bam
-##this takes quite a while to run...
-
-
 
 ##################################################################
 ##To create phylogenies of newly described viruses using iqtree ##
 ##################################################################
-
-##Select 50 or 100 closest distinct viruses to the new virus, from Genbank or unpublished Obbard lab data
-
-##Inveresk virus - have updated the sequence saved as Inveresk in the 5 datasets fasta file...so that it creates a single ORF of the RdRp
-
-##Ran BLASTp for this protein and saved the top 30 distinct credible matches - based on query cover and % identity...though not many are very similar...plus an outgroup (Hubei_coleoptera_virus_3_YP_009336866.1)
-
-##Create alignment of the RdRps of these viruses (other regions of the genome are likely to be too divergent) 
-t_coffee -mode accurate
-#ORRR just..
-m_coffee
-##used
-t_coffee -seq Inveresk_virus_RdRp_30_top_BLASTp_hits.fasta -mode fmcoffee
-
-##Create phylogenetic tree using iqtree (which includes substitution model testing for phylogenies)
-iqtree -s Inveresk_virus_RdRp_30_top_BLASTp_hits.aln -nt 20
-
-##Output should be in .tre or some other newick format recognised by figtree
-
-##Making big phylogeny of all negative ssRNA viruses - Rhabdos and Bunyas
-
-##Create alignment of the RdRps of these viruses (other regions of the genome are likely to be too divergent) 
-
-##used
-cd /mnt/drive1-6tb/Megan
-t_coffee -seq Phylogenies/negative_ssRNA_viruses/negative_ssRNA_viruses.fasta -mode fmcoffee -n_core 20
-#moved output files to Phylogenies folder
-
-##Create phylogenetic tree using iqtree (which includes substitution model testing for phylogenies)
-cd /mnt/drive1-6tb/Megan/Phylogenies/negative_ssRNA_viruses
-iqtree -s negative_ssRNA_viruses.aln -nt 20 -bb 1000
-
-##############################################
-### Making smaller phylogenies for viruses ###
-##############################################
-
-##Burdiehouse burn virus 
-##alignment
-cd /mnt/drive1-6tb/Megan/Phylogenies/Burdiehouse_burn_virus 
-t_coffee -seq Burdiehouse_burn_virus_g_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Burdiehouse_burn_virus_g_15BLASTp.aln -nt 20 -bb 1000
-##model finder selected LG+F+R4 as best fit model for tree
-
-##Cockenzie virus 
-##alignment 
-cd /mnt/drive1-6tb/Megan/Phylogenies/Cockenzie_virus
-t_coffee -seq Cockenzie_virus_Replicase_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Cockenzie_virus_Replicase_15BLASTp.aln -nt 20 -bb 1000
-
-##Craighall and Inverleith Toti viruses
-##alignment
-cd /mnt/drive1-6tb/Megan/Phylogenies/Toti_viruses
-t_coffee -seq Craighall_Inverleith_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Craighall_Inverleith_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-##Crammond virga-like virus + Nege-like viruses #33 seqs
-cd /mnt/drive1-6tb/Megan/Phylogenies/Virga_nege_viruses
-t_coffee -seq Crammond_and_nege_virus_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Crammond_and_nege_virus_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-##Dalkeith virus #17 seqs
-cd /mnt/drive1-6tb/Megan/Phylogenies/Dalkeith_virus
-t_coffee -seq Dalkeith_virus_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Dalkeith_virus_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-##Combined reovirus phylogeny - Vogrie virus and Glencorse burn virus seg 1 / RdRp #23 seqs
-cd /mnt/drive1-6tb/Megan/Phylogenies/Reoviridae
-t_coffee -seq Reovirus_vogrie_glencorse_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Reovirus_vogrie_glencorse_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-##Gosford narnavirus
-cd /mnt/drive1-6tb/Megan/Phylogenies/Gosford_narnavirus
-t_coffee -seq Gosford_narnavirus_ORF1_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Gosford_narnavirus_ORF1_15BLASTp.aln -nt 20 -bb 1000
-
-##Inveresk virus
-cd /mnt/drive1-6tb/Megan/Phylogenies/Inveresk_virus
-t_coffee -seq Inveresk_virus_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Inveresk_virus_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-##Lasswade virus
-cd /mnt/drive1-6tb/Megan/Phylogenies/Lasswade_virus
-t_coffee -seq Lasswade_virus_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Lasswade_virus_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-##Midmar virus
-cd /mnt/drive1-6tb/Megan/Phylogenies/Midmar_virus
-t_coffee -seq Midmar_virus_ORF2_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Midmar_virus_ORF2_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-##North esk virus
-cd /mnt/drive1-6tb/Megan/Phylogenies/North_esk_virus
-t_coffee -seq North_esk_virus_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s North_esk_virus_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-##Phlebo_viruses (Phlebo-like viruses - Sunshine, Sighthill and Tranent)
-cd /mnt/drive1-6tb/Megan/Phylogenies/Phleboviruses
-t_coffee -seq Phleboviruses_RdRp_15BLASTp.fasta -mode accurate -n_core 20 -email=megan.wallace@ed.ac.uk
-##tree
-iqtree -s Phleboviruses_RdRp_15BLASTp.aln -nt 20 -bb 1000
-
-#############################################################################################################
-###Re-doing phylogenies, just 5 top BLASTp hits and one representative from the other genera in the family ##
-#############################################################################################################
 
 ##Burdiehouse burn virus 
 ##alignment
@@ -1237,109 +1034,3 @@ cd /mnt/drive1-6tb/Megan/Phylogenies/Sunshine/02_21
 clustalo --infile=Sunshine_virus_5BLASTp.fasta --seqtype=Protein --infmt=fa --full --outfile=Sunshine_virus_5BLASTp.aln.fas --outfmt=fa
 ##tree
 iqtree -s Sunshine_virus_5BLASTp.aln.fas -nt 8 -bb 1000
-
-#######################################################
-##To plot genome annotation of viruses using gggenes ##
-#######################################################
-
-##Tools for drawing gene arrow maps in ggplot2 (R)
-##good documentation online (updated june-2019)
-library(ggplot2)
-library(gggenes)
-
-##data set up like this
-# hoarc
-                                  # molecule start  end          gene  strand direction
-# 1 Haloarcula hispanica pleomorphic virus 1     1 2352       unknown forward         1
-# 2 Haloarcula hispanica pleomorphic virus 1  2435 2794       unknown forward         1
-# 3 Haloarcula hispanica pleomorphic virus 1  2794 3195           VP3 forward         1
-# 4 Haloarcula hispanica pleomorphic virus 1  2794 3195 VP4 precursor forward         1
-# 5 Haloarcula hispanica pleomorphic virus 1  4805 5356       unknown forward         1
-# 6 Haloarcula hispanica pleomorphic virus 1  5353 6201         gene6 forward         1
-# 7 Haloarcula hispanica pleomorphic virus 1  6348 7340         gene7 forward         1
-# 8 Haloarcula hispanica pleomorphic virus 1  7188 7811         gene8 reverse        -1
-
-#something like this for a simple plot
-ggplot(example_genes, aes(xmin = start, xmax = end, y = molecule, fill = gene)) +
-  geom_gene_arrow() +
-  facet_wrap(~ molecule, scales = "free", ncol = 1) +
-  scale_fill_brewer(palette = "Set3")
-
-#can also label genes, map in both directions, create sub gene segments, align genes across viruses and remove backgrounds etc. 
-
-###############################
-###example from Nathans code###
-###############################
-diamond blastp  -e 0.01 -k 1 -p 20 -d /localdisk/BLAST/NCBI_databases/FlyMetagenomic_diamond.dmnd -q MeganMix2_LongORFs.fas -a allSets_FlyMetagenomic
-diamond view -a allSets_FlyMetagenomic.daa | cut -f 1 | sort | uniq  > allSets_Hits
-diamond view -a allSets_FlyMetagenomic.daa | cut -f 2 | grep -o '[A-Z].\+\.[0-9]' | sort | uniq  > allSets.accs
-#ask if those ACCs numbers are in the virus database (quick/dirty hack to see if they are viruses) - and if they are, output the results to a table
-join -t $'\t' -1 1 -2 2  <(blastdbcmd -db nr_viruses -entry_batch allSets.accs -outfmt "%a#####%S" 2>/dev/null | sed 's/#####/\t/g' | sort -k 1,1 | uniq ) <(diamond view -a allSets_FlyMetagenomic.daa | sed 's/gi|[0-9]\+|ref|//g' | sed 's/|//g' | sort -k 2,2) > MeganMix2_NewVirusLikeHits.tsv
-#experiment (and testing) suggests that Mimiviruses,Herpesviruses,Iridoviruses, and pox viruses are almost invariably unconvincing hits. Remember the objective is to find some viruss, not to fid all the viruses
-cat  MeganMix2_NewVirusLikeHits.tsv  | grep -v '[Mm]imi\|[Pp]hage\|[Hh]erpes\|ourmia\|Acidianus\|phycodnavirus\|endogenous\|Marseillevirus\|Mollivirus\|phycodnavirus\|Ostreococcus\|moumouvirus\|Sulfolobus\|Pandoravirus\|Chlorella\|Phaeocystis\|megavirus\|Ectocarpus_siliculosus\|Feldmannia\|Klosneuvirus\|Lausannevirus\|Bathycoccus\|marseillevirus\|Cafeteria\|Archaea\|Carcinoma\|Acanthocystis\|[Mm]ito\|leukemia\|mamavirus\|Acanthamoeba\|Moumouvirus\|Cannes\|huxleyi\|Megavirus\|ichnovirus\|Port-Miou\|Chlorella_virus' | cut -f 3  | sort | uniq | grep -F -f - -A 1 --no-group-separator --no-filename MeganMix2_Long_DNAs.fas | paste  - - | sed 's/>//g' >  MeganMix2_VirusLikeSequences.tsv
-join -t $'\t' -1 3 -2 1  <(sort -t $'\t' -k 3,3 MeganMix2_NewVirusLikeHits.tsv) <(sort -t $'\t' -k 1,1 MeganMix2_VirusLikeSequences.tsv) | awk -F$'\t' '{print ">"$3"_"$4"%_p="$12"_"$1"\n"$14}' | sed 's/ /_/g' > MeganMix2_NewVirusLikeHits.fas
-
-
-#make a blast database to find those already known
-makeblastdb -in  MeganMix2_NewVirusLikeHits.fas -out MeganMix2_NewVirusLikeHits_BLASTDB -dbtype 'nucl'
-cat GetTheMostUpToDateListOfViruses.fas | blastn -db AllVirusLikeContigs -num_threads 10 -outfmt 6 -perc_identity 90 -evalue 1e-50 | cut -f 1,2 | sort | uniq | more > already_known.tsv
-
-
-
-######################################################
-######################################################
-######################################################
-### for reference this is how the databases are made###
-######################################################
-######################################################
-######################################################
-
-
-# using Martin Jones' script, from Jan 2017 onward
-# Preparation: download and extract NCBI taxdumpfiles
-# already done  wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz && tar zxvf taxdump.tar.gz
-# and download refseq catalogue
-wget ftp://ftp.ncbi.nlm.nih.gov/refseq/release/release-catalog/RefSeq-release79.catalog.gz
-mv RefSeq-release79.catalog.gz RefSeq-release.catalog.gz
-wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/gi_taxid_nucl.dmp.gz
-wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/gi_taxid_prot.dmp.gz
-
-# preformat catalogue to match
-zcat RefSeq-release.catalog.gz | awk '{print $4 "\t" $1}' | gzip >gi_taxid_refseq.gz
-
-# useful info: nucl.dmp has ~600M lines, refseq catalog has ~110
-
-# obtain virus gis from dmps
-python ./taxids2gids.py -i 10239 -e 131567 -f gi_taxid_nucl.dmp.gz > virus_nucl.gis
-python ./taxids2gids.py -i 10239 -e 131567 -f gi_taxid_prot.dmp.gz > virus_prot.gis
-
-
-#make a combined viruses and key refeq_protein database for diamond
-	
-python ./taxids2gids.py -i 2  -f gi_taxid_refseq.gz > Bacteria_RefseqProt.gis
-python ./taxids2gids.py -i 2157  -f gi_taxid_refseq.gz > Archaea_RefseqProt.gis
-
-python ./taxids2gids.py -i 2157  -f gi_taxid_refseq.gz > Flies_RefseqProt.gis
-python ./taxids2gids.py -i 7399  -f gi_taxid_refseq.gz > Wasps_RefseqProt.gis
-python ./taxids2gids.py -i 6231  -f gi_taxid_refseq.gz > Worms_RefseqProt.gis
-python ./taxids2gids.py -i 4751  -f gi_taxid_refseq.gz > Fungi_RefseqProt.gis
-
-#whatever Martin says, I shall use grep to get protozoa out of RefSeq-release.catalog.gz. Its just easier, becasue they don't have a taxid
-zgrep 'protozoa' RefSeq-release.catalog.gz | cut -f 4 > Protozoa_RefseqProt.gis
-cat Bacteria_RefseqProt.gis Archaea_RefseqProt.gis Flies_RefseqProt.gis Wasps_RefseqProt.gis Worms_RefseqProt.gis Fungi_RefseqProt.gis  Protozoa_RefseqProt.gis > FlyContaminants_RefseqProt.gis
-
-#make the databases
-echo "making virus-aliased nr"
-blastdb_aliastool -gilist virus_nucl.gis -db nt -dbtype 'nucl' -out nt_viruses -title 'nt_viruses'
-echo "making virus-aliased nr"
-blastdb_aliastool -gilist virus_prot.gis -db nr -dbtype 'prot' -out nr_viruses -title 'nr_viruses'
-+
-echo "making virus diamond database"
-#make an nr_viruses for diamond
-blastdbcmd  -db nr -entry_batch virus_prot.gis | sed 's/ >.\+//g' | gzip >nr_virus_proteins.fas.gz
-diamond makedb -d nr_virus_diamond --in nr_virus_proteins.fas.gz -p 6
-
-echo "making  fly contaminants database"
-blastdbcmd  -db refseq_protein -entry_batch FlyContaminants_RefseqProt.gis | sed 's/ >.\+//g' | gzip >FlyContaminants_RefseqProt.fas.gz
-zcat FlyContaminants_RefseqProt.fas.gz nr_virus_proteins.fas.gz | gzip > combined.fas.gz
-diamond makedb -d FlyMetagenomic_diamond --in combined.fas.gz -p 6
