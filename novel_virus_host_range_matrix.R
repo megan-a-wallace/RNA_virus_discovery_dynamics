@@ -11,9 +11,6 @@ library(pheatmap)
 library(dplyr)
 library(grid)
 
-##setting working directory
-setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/Data/Fly Collections/Spatial_temporal.prev/data_processing_Aug17_Oct18/virus_presence_absence_PCRs")
-
 ##importing data
 read.csv(file = "novel_viruses_host_range_matrix_binary_minimal.csv", 
          header = TRUE, row.names = "species_collection", stringsAsFactors = FALSE, strip.white = TRUE)->host_range_dat
