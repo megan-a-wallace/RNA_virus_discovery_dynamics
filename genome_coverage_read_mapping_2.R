@@ -7,7 +7,6 @@ library(gridExtra)
 library(scales)
 
 ##importing coverage data across new virus genomes from SeptOct2016 data
-#setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/Sequencing/05_19_totalRNASeq/genome_presentation")
 # Reads mapped across new virus genomes - very-sensitive mapping ----------
 
 ##importing read depth data across new viruses generated using --very-sensitive read mapping to bowtie database, SeptOct2016 data
