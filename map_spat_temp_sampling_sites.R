@@ -4,8 +4,6 @@
 #'date: 25th July 2017
 #'---
 
-setwd("C:/Users/s1667991/Dropbox/PhD - 1st Year/thesis/ch2_metagenomic_virus_discovery")
-
 #'Loading required mapping packages into R
 
 require(ggplot2)
@@ -23,8 +21,8 @@ cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 sampling_site_data<-read.csv(file = "sampling_site_coords.csv", header = TRUE)
 
 # get the map info
-#I registered this API before 
-#register_google(key = "AIzaSyCqBPPYeRoLIrdzbWwMZghNdYsO2yis2lI", write = TRUE)
+#pre-register an API 
+#register_google(key = "", write = TRUE)
 edin_map <- get_googlemap("Musselburgh, Scotland", zoom = 10.5, maptype = "satellite")
 
 # Plot it
